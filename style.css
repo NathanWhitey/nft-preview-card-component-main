@@ -1,0 +1,201 @@
+:root {
+
+    /* FONTS */
+
+    font-family: 'Outfit', sans-serif;
+
+    --fw-small: 300;
+    --fw-medium: 400;
+    --fw-big: 600;
+
+    /* COLORS */
+
+    --clr-primary: hsl(215, 51%, 70%);
+    --clr-secondary: hsl(178, 100%, 50%);
+
+    --clr-mainbg: hsl(217, 54%, 11%);
+    --clr-cardbg: hsl(216, 50%, 16%);
+    --clr-line: hsl(215, 32%, 27%);
+    --clr-white: hsl(0, 0%, 100%);
+
+}
+
+/* CSS RESET */
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    3. Allow percentage-based heights in the application
+  */
+  html, body {
+    height: 100%;
+  }
+  /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    6. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    7. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    8. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+    font: inherit;
+  }
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+
+  /* STYLING */
+
+body {
+    background-color: var(--clr-mainbg);
+    display: grid;
+    min-height: 100vh;
+    place-content: center;
+}
+
+.container {
+    background-color: var(--clr-cardbg);
+    margin: 0 auto;
+    width: 350px;
+    padding: 25px;
+    border-radius: 1rem;
+}
+
+/* IMAGE */
+
+ .img_top {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    position: relative;
+ }
+
+ .img_overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: hsla(178, 100%, 50%, 0.5);
+    display: none;
+ }
+
+.img_overlay img {
+    position: absolute;
+    width: 50px;
+    left: 50px;
+    top: 50px;
+    transform: translate(150%, 150%);
+}
+
+.img_top:hover .img_overlay {
+    display: block;
+    cursor: pointer;
+}
+
+/* BOTTOM HALF */
+
+.info h1 {
+    font-size: 1.275rem;
+    color: var(--clr-white);
+    font-weight: var(--fw-big);
+    padding: 25px 0 15px 0;
+}
+
+.info p {
+    font-size: 1.125rem;
+    color: var(--clr-primary);
+    font-weight: var(--fw-small);
+}
+
+.price {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    align-items: center;
+}
+
+.price1 {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    color: var(--clr-secondary);
+    font-size: 1rem;
+}
+
+.price2 {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    color: var(--clr-primary);
+}
+
+.price2 img {
+    width: 18px;
+    height: 18px;
+}
+
+hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid hsla(215, 32%, 27%, 0.8);
+}
+
+.footer {
+    display: inline-flex;
+    padding-top: 15px;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    color: var(--clr-primary);
+}
+
+.footer img {
+    width: 35px;
+    height: 35px;
+    border: 2px solid var(--clr-white);
+    border-radius: 50%;
+}
+
+a {
+    text-decoration: none;
+    color: var(--clr-white);
+}
+
+a:hover {
+    cursor: pointer;
+    color: var(--clr-secondary);
+}
